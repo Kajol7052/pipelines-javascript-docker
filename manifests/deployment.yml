@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kajolimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kajolimage
+  template:
+    metadata:
+      labels:
+        app: kajolimage 
+    spec:
+      containers:
+        - name: kajolimage 
+          image: kajolcontainerregistry.azurecr.io/kajolimage
+          ports:
+          - containerPort: 8080
